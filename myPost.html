@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>用户简介 | Wanted</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="bootstrap/css/dashboard.css" rel="stylesheet">
+  <!-- AmazeUI-->
+  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.css"/>
+  <link rel="stylesheet" href="assets/css/landing.css"/>
+  <style>
+      a,a:hover{
+        color: #f46;
+        text-decoration: none;
+      }
+      body {
+        padding-top: 0px;
+      }
+  </style>
+</head>
+<body>
+    <div class="menban"></div>
+<div class="am-g">
+  <div class="am-u-sm-12 am-u-sm-centered">
+          <h1 class="page-header">我发布的任务</h1>
+          <div class="search-condition">
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" checked="checked" value="" data-am-ucheck checked>未认领
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="" data-am-ucheck>
+              已认领
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="" data-am-ucheck>已完成
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="" data-am-ucheck>
+              未完成
+            </label>
+          </div>
+          <h2 class="sub-header">查询结果</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>任务状态</th>
+                  <th>任务概述</th>
+                  <th>任务悬赏</th>
+                  <th>截止日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>未认领</td>
+                  <td>30舍求取快递</td>
+                  <td>请吃饭</td>
+                  <td>2015-11-21下午6:00前</td>
+                  <td><a href="#" class="trigger-modal" id="1">查看详情</a></td>
+                </tr>
+                <tr>
+                  <td>已认领</td>
+                  <td>yq去zjg求陪同</td>
+                  <td>无</td>
+                  <td>2015-11-25日上午8:00</td>
+                  <td><a href="#" class="trigger-modal" id="2">查看详情</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+  </div>
+</div>
+    <div class="modal" id="mymodal">  
+        <div class="modal-dialog">  
+            <div class="modal-content">  
+                <div class="modal-header">  
+                    <button type="button" class="close" name="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>  
+                    <h4 class="modal-title">悬赏令</h4>  
+                </div>  
+                <div class="modal-body">  
+                    <form class="form-signin" style="max-width: 660px;  padding: 10px;">
+                      <label for="Title" class="">标题</label>
+                      <p id="Addr">玉泉30舍求帮取快递</p>        
+                      <label for="Addr" class="">地点</label>
+                      <p id="Addr">玉泉校区</p>
+                      <label for="Reword" class="">悬赏</label>
+                      <p id="Reword">请吃饭</p>
+                      <label for="Time" class="">截止时间</label>
+                      <p id="Time">2015-11-22 下午06:00</p>
+                      <label for="Description" class="">具体描述</label>
+                      <p id="Time">今天下午六点前，求帮取快递。取完请你吃饭，多谢～</p>
+                    </form>  
+                </div>  
+                <div class="modal-footer">  
+                    <button type="button" class="btn btn-default" name="close" data-dismiss="modal" id="btn-close">关闭</button>  
+                    <button type="button" class="btn btn-primary" style="background-color: #f46;border-color: #f46;" id="btn-receive" data-dismiss="modal" >接收</button>  
+                </div>  
+            </div><!-- /.modal-content -->  
+        </div><!-- /.modal-dialog -->  
+    </div><!-- /.modal -->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //点击table的行
+      $('.trigger-modal').click(function(){
+          $('.menban').show();
+          $("#mymodal").modal("toggle"); 
+          console.log($(this)[0].id);
+        }) 
+    </script>
+</body>
+</html>

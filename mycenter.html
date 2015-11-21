@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>个人中心 | Wanted</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/dashboard.css" rel="stylesheet">
+    <!-- AmazeUI-->
+    <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="stylesheet" href="assets/css/amazeui.css"/>
+    <link rel="stylesheet" href="assets/css/landing.css"/>
+    <style>
+      iframe {
+        width: 100%;
+        height: 800px;
+      }
+      .menban{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: 1111;
+        display: none;
+      }
+      .modal {
+        z-index: 2000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menban"></div>
+
+    <header class="am-topbar am-topbar-fixed-top">
+      <div class="am-container">
+        <h1 class="am-topbar-brand" >
+          <a class="title" href="index.html">Wanted</a>
+        </h1>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+                data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+            class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+          <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li><a href="landing.html">任务列表</a></li>
+            <li class="am-active"><a href="mycenter.html">个人中心</a></li>
+          </ul>
+          <div class="am-topbar-right">
+            <a href="index.html">
+              <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登出</button>
+            </a>
+          </div>
+
+          <div class="am-topbar-right">
+            <a href="post.html">
+              <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>发布任务</button>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active personalPage" id="personalPage"><a href="#">个人资料 <span class="sr-only">(current)</span></a></li>
+            <li class="mypost" id="mypost"><a href="#">我发布的任务</a></li>
+            <li class="myreceive" id="myreceive"><a href="#">我接收的任务</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <iframe src="personalPage.html" id="mycontent">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="mymodal">  
+        <div class="modal-dialog">  
+            <div class="modal-content">  
+                <div class="modal-header">  
+                    <button type="button" class="close" name="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>  
+                    <h4 class="modal-title">悬赏令</h4>  
+                </div>  
+                <div class="modal-body">  
+                    <form class="form-signin" style="max-width: 660px;  padding: 10px;">
+                      <label for="Title" class="">标题</label>
+                      <p id="Addr">玉泉30舍求帮取快递</p>        
+                      <label for="Addr" class="">地点</label>
+                      <p id="Addr">玉泉校区</p>
+                      <label for="Reword" class="">悬赏</label>
+                      <p id="Reword">请吃饭</p>
+                      <label for="Time" class="">截止时间</label>
+                      <p id="Time">2015-11-22 下午06:00</p>
+                      <label for="Description" class="">具体描述</label>
+                      <p id="Time">今天下午六点前，求帮取快递。取完请你吃饭，多谢～</p>
+                    </form>  
+                </div>  
+                <div class="modal-footer">  
+                    <button type="button" class="btn btn-default" name="close" data-dismiss="modal" id="btn-close">关闭</button>  
+                    <button type="button" class="btn btn-primary" style="background-color: #f46;border-color: #f46;" id="btn-receive" data-dismiss="modal" >接收</button>  
+                </div>  
+            </div><!-- /.modal-content -->  
+        </div><!-- /.modal-dialog -->  
+    </div><!-- /.modal -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.personalPage, .mypost, .myreceive').click(function(){
+          newSrc = $(this).attr('id') + '.html'
+          $('#mycontent').attr('src', newSrc)
+          $('.personalPage, .mypost, .myreceive').removeClass('active')
+          $(this).addClass('active')
+        });
+        
+      });
+    </script>
+  </body>
+</html>

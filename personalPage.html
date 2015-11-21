@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>用户简介 | Wanted</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.css"/>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <style>
+    .am-g {
+      font-size: 1.6rem;
+    }
+    .am-form{
+      position: relative;
+    }
+    .p-img{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 5%;
+      top: 10%;
+    }
+  </style>
+</head>
+<body>
+<div class="am-g">
+  <div class="am-u-sm-12">
+    <h1 class="page-header">用户简介</h1>
+    <hr>
+    <form class="am-form">
+      <label for="name">姓名:</label>
+      <span name="" id="name">哈哈哈</span>
+      <br>
+      <label for="sex">性别:</label>
+      <span name="" id="sex">女</span>
+      <br>
+      <label for="school">学校:</label>
+      <span name="" id="school">浙江大学</span>
+      <br>
+      <label for="tel">联系电话:</label>
+      <span name="" id="tel">188****2222</span>
+      <br>
+      <label for="email">电子邮箱:</label>
+      <span name="" id="email">example@163.com</span>
+      <br>
+      <label for="rank">信誉评分:</label>
+      <span name="" id="rank">111</span>
+      <br>
+      <label for="time">注册时间:</label>
+      <span name="" id="time">2015年11月21日</span>
+      <br>
+      <img src="assets/img/default.jpg" class="p-img">
+    </form>
+    <hr>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $.get("demo_test.asp",function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });  
+</script>
+</body>
+</html>
