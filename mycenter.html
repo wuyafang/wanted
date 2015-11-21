@@ -34,15 +34,21 @@
         z-index: 1111;
         display: none;
       }
+<<<<<<< HEAD
       .modal {
         z-index: 2000;
       }
+=======
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
     </style>
   </head>
 
   <body>
     <div class="menban"></div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
     <header class="am-topbar am-topbar-fixed-top">
       <div class="am-container">
         <h1 class="am-topbar-brand" >
@@ -55,6 +61,7 @@
 
         <div class="am-collapse am-topbar-collapse" id="collapse-head">
           <ul class="am-nav am-nav-pills am-topbar-nav">
+<<<<<<< HEAD
             <li><a href="landing.html">任务列表</a></li>
             <li class="am-active"><a href="mycenter.html">个人中心</a></li>
           </ul>
@@ -68,6 +75,17 @@
             <a href="post.html">
               <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>发布任务</button>
             </a>
+=======
+            <li class="am-active"><a href="landing.html">任务列表</a></li>
+            <li><a href="mycenter.html">个人中心</a></li>
+          </ul>
+          <div class="am-topbar-right">
+            <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登出</button>
+          </div>
+
+          <div class="am-topbar-right">
+            <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span>发布任务</button>
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
           </div>
 
         </div>
@@ -81,6 +99,10 @@
             <li class="active personalPage" id="personalPage"><a href="#">个人资料 <span class="sr-only">(current)</span></a></li>
             <li class="mypost" id="mypost"><a href="#">我发布的任务</a></li>
             <li class="myreceive" id="myreceive"><a href="#">我接收的任务</a></li>
+<<<<<<< HEAD
+=======
+            <li class="test" id="myreceive"><a href="#">放萌版</a></li>
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -90,6 +112,7 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <div class="modal" id="mymodal">  
         <div class="modal-dialog">  
             <div class="modal-content">  
@@ -119,6 +142,8 @@
         </div><!-- /.modal-dialog -->  
     </div><!-- /.modal -->
 
+=======
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -135,7 +160,17 @@
           $('.personalPage, .mypost, .myreceive').removeClass('active')
           $(this).addClass('active')
         });
+<<<<<<< HEAD
         
+=======
+
+        $('.test').click(function(){
+          $('.menban').show();
+        })
+        $('.menban').click(function(){
+          $(this).hide();
+        })
+>>>>>>> cef8d3c65ee050253ba463b385b6951aac964d20
       });
     </script>
   </body>
