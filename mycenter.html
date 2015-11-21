@@ -18,11 +18,15 @@
     <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
     <link rel="stylesheet" href="assets/css/amazeui.css"/>
     <link rel="stylesheet" href="assets/css/landing.css"/>
-
+    <style>
+      iframe {
+        width: 100%;
+        height: 800px;
+      }
+    </style>
   </head>
 
   <body>
-
     <header class="am-topbar am-topbar-fixed-top">
       <div class="am-container">
         <h1 class="am-topbar-brand" >
@@ -60,71 +64,8 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">任务列表</h1>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" checked="checked" value="" data-am-ucheck checked>未认领
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>
-            已认领
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>已完成
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>
-            未完成
-          </label>
-<!--           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>待认领</h4>
-              <span class="text-muted">还没有人领取哦</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>已认领</h4>
-              <span class="text-muted">嗯可以开始任务了</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>已完成</h4>
-              <span class="text-muted">哇塞成功完成任务</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>已失败</h4>
-              <span class="text-muted">很遗憾这次任务失败了</span>
-            </div>
-          </div> -->
-
-          <h2 class="sub-header">查询结果</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>任务状态</th>
-                  <th>任务概述</th>
-                  <th>任务悬赏</th>
-                  <th>截止日期</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>未认领</td>
-                  <td>30舍求取快递</td>
-                  <td>请吃饭</td>
-                  <td>2015-11-21下午6:00前</td>
-                </tr>
-                <tr>
-                  <td>已认领</td>
-                  <td>yq去zjg求陪同</td>
-                  <td>无</td>
-                  <td>2015-11-25日上午8:00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <iframe src="personalPage.html" id="mycontent">
+          </iframe>
         </div>
       </div>
     </div>
