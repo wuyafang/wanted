@@ -10,6 +10,7 @@
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
   <link rel="stylesheet" href="assets/css/amazeui.css"/>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <style>
     .header {
       text-align: center;
@@ -46,10 +47,10 @@
 
     <form method="post" class="am-form">
       <label for="email">邮箱:</label>
-      <input type="email" name="" id="email" value="">
+      <input type="email" name="" id="email" value="" class="email">
       <br>
       <label for="password">密码:</label>
-      <input type="password" name="" id="password" value="">
+      <input type="password" name="" id="password" value="" class="password">
       <br>
       <label for="remember-me">
         <input id="remember-me" type="checkbox">
@@ -57,7 +58,7 @@
       </label>
       <br />
       <div class="am-cf">
-        <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
+        <a type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl login" id="login" href="mycenter.html">
         <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
         <a href="logup.html" class="am-btn am-btn-sm am-fr get-btn">还是去注册吧</a>
       </div>
@@ -66,5 +67,23 @@
     <p>©2015-11-21 hackathon by HiGirlsZJU</p>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#login').click(function(){
+      if (!$('.email').val() || !(/\w@\w*\.\w/).test($('.email').val())) {
+        alert('请填写正确的email！');
+        return false;
+      }
+      if (!$('.password').val()) {
+        alert('请填写密码！');
+        return false;
+      }
+      if ($('.password').val().length < 6) {
+        alert('密码长度不小于6位！');
+        return false;
+      }
+    });
+  });
+</script>
 </body>
 </html>
