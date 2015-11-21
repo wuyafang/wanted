@@ -2,13 +2,17 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Landing Page | Amaze UI Example</title>
+  <title> 任务列表 | Wanted</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="bootstrap/css/dashboard.css" rel="stylesheet">
   <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
   <link rel="stylesheet" href="assets/css/amazeui.css"/>
   <link rel="stylesheet" href="assets/css/landing.css"/>
@@ -100,7 +104,7 @@
 <header class="am-topbar am-topbar-fixed-top">
   <div class="am-container">
     <h1 class="am-topbar-brand" >
-      <a class="title" href="#">Wanted</a>
+      <a class="title" href="index.html">Wanted</a>
     </h1>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
@@ -109,19 +113,8 @@
 
     <div class="am-collapse am-topbar-collapse" id="collapse-head">
       <ul class="am-nav am-nav-pills am-topbar-nav">
-        <li class="am-active"><a href="#">任务列表</a></li>
-        <li class="am-dropdown" data-am-dropdown>
-          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-            我的事项 <span class="am-icon-caret-down"></span>
-          </a>
-          <ul class="am-dropdown-content">
-            <li class="am-dropdown-header">我的事项</li>
-            <li><a href="#">我发布的任务</a></li>
-            <li><a href="#">我接收的任务</a></li>
-            <li><a href="#">已完成的任务</a></li>
-            <li><a href="#">未完成的任务</a></li>
-          </ul>
-        </li>
+        <li class="am-active"><a href="landing.html">任务列表</a></li>
+        <li><a href="mycenter.html">个人中心</a></li>
       </ul>
       <div class="am-topbar-right">
         <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登出</button>
@@ -135,129 +128,55 @@
   </div>
 </header>
 
-<div class="get">
-  <div class="am-g">
-    <div class="am-u-lg-12">
-      <h1 class="get-title">Amaze UI - HTML5 跨屏前端框架</h1>
+    <div class="container-fluid">
+      <div class="am-g am-container">
+        <div class="am-u-lg-12">
 
-      <p>
-        期待你的参与，共同打造一个简单易用的前端框架
-      </p>
-
-      <p>
-        <a href="http://amazeui.org" class="am-btn am-btn-sm get-btn">获取新get技能√</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="detail">
-  <div class="am-g am-container">
-    <div class="am-u-lg-12">
-      <h2 class="detail-h2">One Web 、Any Device，期待和你一起去实现!</h2>
-
-      <div class="am-g">
-        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
-
-          <h3 class="detail-h3">
-            <i class="am-icon-mobile am-icon-sm"></i>
-            为移动而生
-          </h3>
-
-          <p class="detail-p">
-            Amaze UI 采用业内先进的 mobile first 理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
-          </p>
-        </div>
-        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
-          <h3 class="detail-h3">
-            <i class="am-icon-cogs am-icon-sm"></i>
-            组件丰富，模块化
-          </h3>
-
-          <p class="detail-p">
-            Amaze UI 含近 20 个 CSS 组件、10 个 JS 组件，更有 17 款包含近 60 个主题的 Widgets，可快速构建界面出色、体验优秀的跨屏页面，大幅度提升你的开发效率。
-          </p>
-        </div>
-        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
-          <h3 class="detail-h3">
-            <i class="am-icon-check-square-o am-icon-sm"></i>
-            本地化支持
-          </h3>
-
-          <p class="detail-p">
-            相比国外的前端框架，Amaze UI 专注解决中文排版优化问题，根据操作系统调整字体，实现最佳中文排版效果；针对国内主流浏览器及 App 内置浏览器提供更好的兼容性支持，为你节省大量兼容性调试时间。
-          </p>
-        </div>
-        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
-          <h3 class="detail-h3">
-            <i class="am-icon-send-o am-icon-sm"></i>
-            轻量级，高性能
-          </h3>
-
-          <p class="detail-p">
-            Amaze UI 非常注重性能，基于轻量的 Zepto.js 开发，并使用 CSS3 来做动画交互，平滑、高效，更适合移动设备，让你的 Web 应用可以高速载入。
-          </p>
+          <h1 class="page-header">任务列表</h1>
+          <label class="am-radio-inline am-danger">
+            <input type="radio" name="radio1" checked="checked" value="" data-am-ucheck checked>未认领
+          </label>
+          <label class="am-radio-inline am-danger">
+            <input type="radio" name="radio1" value="" data-am-ucheck>
+            已认领
+          </label>
+          <label class="am-radio-inline am-danger">
+            <input type="radio" name="radio1" value="" data-am-ucheck>已完成
+          </label>
+          <label class="am-radio-inline am-danger">
+            <input type="radio" name="radio1" value="" data-am-ucheck>
+            未完成
+          </label>
+          <h2 class="page-header">查询结果</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>任务状态</th>
+                  <th>任务概述</th>
+                  <th>任务悬赏</th>
+                  <th>截止日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>未认领</td>
+                  <td>30舍求取快递</td>
+                  <td>请吃饭</td>
+                  <td>2015-11-21下午6:00前</td>
+                </tr>
+                <tr>
+                  <td>已认领</td>
+                  <td>yq去zjg求陪同</td>
+                  <td>无</td>
+                  <td>2015-11-25日上午8:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="hope">
-  <div class="am-g am-container">
-    <div class="am-u-lg-4 am-u-md-6 am-u-sm-12 hope-img">
-      <img src="assets/i/examples/landing.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}">
-      <hr class="am-article-divider am-show-sm-only hope-hr">
-    </div>
-    <div class="am-u-lg-8 am-u-md-6 am-u-sm-12">
-      <h2 class="hope-title">同我们一起打造你的前端框架</h2>
-
-      <p>
-        在知识爆炸的年代，我们不愿成为知识的过客，拥抱开源文化，发挥社区的力量，参与到Amaze Ui开源项目能获得自我提升。
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="about">
-  <div class="am-g am-container">
-    <div class="am-u-lg-12">
-      <h2 class="about-title about-color">Amaze UI 崇尚开放、自由，非常欢迎大家的参与</h2>
-
-      <div class="am-g">
-        <div class="am-u-lg-6 am-u-md-4 am-u-sm-12">
-          <form class="am-form">
-            <label for="name" class="about-color">你的姓名</label>
-            <input id="name" type="text">
-            <br/>
-            <label for="email" class="about-color">你的邮箱</label>
-            <input id="email" type="email">
-            <br/>
-            <label for="message" class="about-color">你的留言</label>
-            <textarea id="message"></textarea>
-            <br/>
-            <button type="submit" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-check"></i> 提 交</button>
-          </form>
-          <hr class="am-article-divider am-show-sm-only">
-        </div>
-
-        <div class="am-u-lg-6 am-u-md-8 am-u-sm-12">
-          <h4 class="about-color">关于我们</h4>
-
-          <p>AllMobilize Inc (美通云动科技有限公司)
-            由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。基于国际专利技术并结合最前沿的HTML5技术，云适配解决方案可以帮助企业快速将桌面版网站适配到各种移动设备终端的屏幕上，不仅显著地提高了企业网站的用户体验以及销售转化率，而且大幅度地节省了企业开发和维护移动网站的费用。</p>
-          <h4 class="about-color">团队介绍</h4>
-
-          <p>AllMobilize Inc 获得了微软创投孵化器的支持，其领先科技已得到全球多家企业及机构的认可与信赖，客户包括全球500强企业、美国政府、国内政府机关、国内外上市公司、以及互联网标准化组织W3C。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer class="footer">
-  <p>©2015-11-21 hackathon by HiGirlsZJU</p>
-</footer>
 
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>

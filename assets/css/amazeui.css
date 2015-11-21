@@ -443,6 +443,7 @@ a {
 a:hover,
 a:focus {
   color: #095f8a;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
