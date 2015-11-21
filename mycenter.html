@@ -58,9 +58,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">个人资料 <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">我发布的任务</a></li>
-            <li><a href="#">我接收的任务</a></li>
+            <li class="active personalPage" id="personalPage"><a href="#">个人资料 <span class="sr-only">(current)</span></a></li>
+            <li class="mypost" id="mypost"><a href="#">我发布的任务</a></li>
+            <li class="myreceive" id="myreceive"><a href="#">我接收的任务</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -78,5 +78,15 @@
     <!--<![endif]-->
     <script src="assets/js/amazeui.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.personalPage, .mypost, .myreceive').click(function(){
+          newSrc = $(this).attr('id') + '.html'
+          $('#mycontent').attr('src', newSrc)
+          $('.personalPage, .mypost, .myreceive').removeClass('active')
+          $(this).addClass('active')
+        });
+      });
+    </script>
   </body>
 </html>
