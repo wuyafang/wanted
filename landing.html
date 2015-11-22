@@ -79,20 +79,25 @@
       <div class="am-g">
         <div class="am-u-sm-9 am-u-sm-centered">
           <h1 class="page-header">任务列表</h1>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" checked="checked" value="" data-am-ucheck checked>未认领
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>
-            已认领
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>已完成
-          </label>
-          <label class="am-radio-inline am-danger">
-            <input type="radio" name="radio1" value="" data-am-ucheck>
-            未完成
-          </label>
+          <div class="search-condition">
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" checked="checked" value="0" data-am-ucheck checked>待接收
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" checked="checked" value="1" data-am-ucheck checked>失效
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="2" data-am-ucheck>
+              已接收
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="3" data-am-ucheck>已完成
+            </label>
+            <label class="am-radio-inline am-danger">
+              <input type="radio" name="radio1" value="4" data-am-ucheck>
+              失败
+            </label>
+          </div>
           <h2 class="page-header">查询结果</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -109,14 +114,14 @@
                   <td>未认领</td>
                   <td>30舍求取快递</td>
                   <td>请吃饭</td>
-                  <td>2015-11-21下午6:00前</td>
+                  <td>2015-11-21下午6:00</td>
                   <td><a href="#" class="trigger-modal" id="1">查看详情</a></td>
                 </tr>
                 <tr>
                   <td>已认领</td>
                   <td>yq去zjg求陪同</td>
                   <td>无</td>
-                  <td>2015-11-25日上午8:00</td>
+                  <td>2015-11-25上午8:00</td>
                   <td><a href="#" class="trigger-modal" id="2">查看详情</a></td>
                 </tr>
               </tbody>
