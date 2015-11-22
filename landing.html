@@ -84,7 +84,7 @@
               <input type="radio" name="radio1" checked="checked" value="0" data-am-ucheck checked>待接收
             </label>
             <label class="am-radio-inline am-danger">
-              <input type="radio" name="radio1" checked="checked" value="1" data-am-ucheck checked>失效
+              <input type="radio" name="radio1" value="1" data-am-ucheck>失效
             </label>
             <label class="am-radio-inline am-danger">
               <input type="radio" name="radio1" value="2" data-am-ucheck>
@@ -99,7 +99,7 @@
             </label>
           </div>
           <h2 class="page-header">查询结果</h2>
-          <div class="table-responsive">
+          <div class="table-responsive" id="table_result">
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -111,17 +111,24 @@
               </thead>
               <tbody id='tbody'>
                 <tr>
-                  <td>未认领</td>
+                  <td>待接收</td>
                   <td>30舍求取快递</td>
                   <td>请吃饭</td>
-                  <td>2015-11-21下午6:00</td>
+                  <td>2015-11-22下午06:00</td>
                   <td><a href="#" class="trigger-modal" id="1">查看详情</a></td>
                 </tr>
                 <tr>
-                  <td>已认领</td>
+                  <td>待接收</td>
                   <td>yq去zjg求陪同</td>
                   <td>无</td>
-                  <td>2015-11-25上午8:00</td>
+                  <td>2015-11-25上午08:00</td>
+                  <td><a href="#" class="trigger-modal" id="2">查看详情</a></td>
+                </tr>
+                <tr>
+                  <td>待接收</td>
+                  <td>名人名家约饭</td>
+                  <td>无</td>
+                  <td>2015-11-22上午12:00</td>
                   <td><a href="#" class="trigger-modal" id="2">查看详情</a></td>
                 </tr>
               </tbody>
@@ -184,53 +191,40 @@
           $('.modal').hide();
           $('.menban').hide();
         })
-
-
-        // //接收单个对象
-        // $.ajax({
-        //   url: "/task/list",
-        //   dataType: "json",
-        //   success: function(data) {
-        //     if(data.status==200) {
-        //       data = data.data.list;
-        //       trs = ''
-        //       for (i = 0; i < data.length; i ++) {
-        //         tr = '<tr>'
-        //         status = ''
-        //         switch (data[i].status) {
-        //           case 0:
-        //             status = '待接收';
-        //           case 1:
-        //             status = '失效';
-        //           case 2:
-        //             status = '已接收';
-        //           case 3:
-        //             status = '已完成';
-        //           case 4:
-        //             status = '失败';
-        //         }
-        //         tr += '<td>' + status + '</td>'
-        //         tr += '<td>' + data.requirement + '</td>'
-        //         tr += '<td>' + status.reward + '</td>'
-        //         tr += '<td>' + status.validtime + '</td>'
-        //         tr += '<td><a href="#" class="trigger-modal" id=' + status.id + '>查看详情</a></td>'
-        //         tr += '</tr>'
-        //         trs += tr
-        //       }
-
-        //       $('#tbody').replace(trs)
-        //     }
-        //     else{
-        //       alert(data.msg); //报错信息
-        //     }
-        //   },
-        //   error: function() {
-        //     alert("get info fail");
-        //   }
-        // });
-
-
-        
+        data = [{'id':7,'title':"30舍求取快递",'reward': "请吃饭",'valid_time':'2015-11-22下午06:00','status':0},{'id':8,'title':"yq去zjg求陪同",'reward': "无",'valid_time':'2015-11-25上午08:00','status':0},{'id':9,'title':"求约饭2",'reward': "无",'valid_time':'2015-11-24下午05:00','status':2},{'id':9,'title':"求约饭3",'reward': "无",'valid_time':'2015-11-25下午05:00','status':2},{'id':8,'title':"名人名家约饭",'reward': "无",'valid_time':'2015-11-22上午12:00','status':0},{'id':1,'title':"求约球1",'reward': "5元",'valid_time':'2015-11-24下午05:00','status':2},{'id':2,'title':"求约球2",'reward': "5元",'valid_time':'2015-11-24下午05:00','status':1},{'id':3,'title':"求约球3",'reward': "5元",'valid_time':'2015-11-24下午05:00','status':2},{'id':4,'title':"求约球4",'reward': "5元",'valid_time':'2015-11-24下午05:00','status':3}] 
+        $('.search-condition input[name="radio1"]').click(function(){
+            var value = $('.search-condition input[name="radio1"]:checked').val();
+            var postData = {seeker_id: 1 , type1: "post" ,type2: value}
+            console.log(value);
+            var string="";
+            var type2="";
+            switch(value){
+              case "0":
+                type2="待接收";
+                break;
+              case "1":
+                type2="失效";
+                break;
+              case "2":
+                type2="已接收";
+                break;
+              case "3":
+                type2="已完成";
+                break;
+              case "4":
+                type2="失败";
+                break;
+              default:
+                break;
+            }
+            for(var i = 0; i < data.length; i=i+1){
+              if(data[i].status == parseInt(value)){
+                string = string + "<tr><td>"+type2+"</td><td>"+data[i].title+"</td><td>"+data[i].reward+"</td><td><a href='#' class='trigger-modal' id="+data[i].id+">查看详情</a></td></tr>";
+              }
+            }
+            string=" <table class='table table-striped'><thead><tr><th>任务状态</th><th>任务概述</th><th>任务悬赏</th><th>截止日期</th></tr></thead><tbody>"+string+"</tbody></thread></table>";
+            $('#table_result').html(string);
+        })
       });
     </script>
 </body>
