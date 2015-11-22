@@ -109,7 +109,7 @@
                   <th>截止日期</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id='tbody'>
                 <tr>
                   <td>未认领</td>
                   <td>30舍求取快递</td>
@@ -184,6 +184,51 @@
           $('.modal').hide();
           $('.menban').hide();
         })
+
+
+        // //接收单个对象
+        // $.ajax({
+        //   url: "/task/list",
+        //   dataType: "json",
+        //   success: function(data) {
+        //     if(data.status==200) {
+        //       data = data.data.list;
+        //       trs = ''
+        //       for (i = 0; i < data.length; i ++) {
+        //         tr = '<tr>'
+        //         status = ''
+        //         switch (data[i].status) {
+        //           case 0:
+        //             status = '待接收';
+        //           case 1:
+        //             status = '失效';
+        //           case 2:
+        //             status = '已接收';
+        //           case 3:
+        //             status = '已完成';
+        //           case 4:
+        //             status = '失败';
+        //         }
+        //         tr += '<td>' + status + '</td>'
+        //         tr += '<td>' + data.requirement + '</td>'
+        //         tr += '<td>' + status.reward + '</td>'
+        //         tr += '<td>' + status.validtime + '</td>'
+        //         tr += '<td><a href="#" class="trigger-modal" id=' + status.id + '>查看详情</a></td>'
+        //         tr += '</tr>'
+        //         trs += tr
+        //       }
+
+        //       $('#tbody').replace(trs)
+        //     }
+        //     else{
+        //       alert(data.msg); //报错信息
+        //     }
+        //   },
+        //   error: function() {
+        //     alert("get info fail");
+        //   }
+        // });
+
 
         
       });
